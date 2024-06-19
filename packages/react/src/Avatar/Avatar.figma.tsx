@@ -10,23 +10,19 @@ import figma from '@figma/code-connect'
  * code example you'd like to see in Figma
  */
 
-figma.connect(
-  Avatar,
-  'https://www.figma.com/file/GCvY3Qv8czRgZgvl1dG6lp/Primer-Web?type=design&node-id=3805-11&mode=design&t=n5UtEmPJTCzDEJKK-4',
-  {
-    props: {
-      size: figma.enum('size', {
-        '16px': 16,
-        '20px': 20,
-        '24px': 24,
-        '28px': 28,
-        '32px': 32,
-        '40px': 40,
-        '48px': 48,
-        '64px': 64,
-      }),
-      square: figma.boolean('square'),
-    },
-    example: ({size, square}) => <Avatar src="/path/to/file/mona.png" size={size} square={square} />,
+figma.connect(Avatar, 'https://www.figma.com/design/ieK3h0I8pVv7tRUoR3z4Hh?node-id=3805-11', {
+  props: {
+    size: figma.enum('size', {
+      '16px': 16,
+      '20px': 20,
+      '24px': 24,
+      '28px': 28,
+      '32px': 32,
+      '40px': 40,
+      '48px': 48,
+      '64px': 64,
+    }),
+    square: figma.boolean('square'),
   },
-)
+  example: ({size, square}) => <Avatar src="/path/to/file/mona.png" size={size} square={square} />,
+})

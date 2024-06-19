@@ -5,6 +5,7 @@ import {ButtonComponent as Button} from './Button'
 import React from 'react'
 
 const componentProps = {
+  label: figma.textContent('Button'),
   disabled: figma.enum('state', {disabled: true}),
   inactive: figma.enum('state', {inactive: true}),
   size: figma.enum('size', {
@@ -32,21 +33,7 @@ const componentProps = {
   }),
 }
 
-figma.connect(
-  Button,
-  'https://www.figma.com/file/GCvY3Qv8czRgZgvl1dG6lp/Primer-Web?type=design&node-id=30258%3A5582&mode=design&t=TVF2yeiff0ZtzQll-1',
-  {
-    props: componentProps,
-    example: ({size, disabled, inactive, alignContent, leadingVisual, variant}) => (
-      <Button
-        size={size}
-        disabled={disabled}
-        inactive={inactive}
-        alignContent={alignContent}
-        variant={variant}
-        leadingVisual={leadingVisual}
-        trailingVisual={trailingVisual}
-      ></Button>
-    ),
-  },
-)
+figma.connect(Button, 'https://www.figma.com/design/ieK3h0I8pVv7tRUoR3z4Hh?node-id=30258-5582', {
+  props: componentProps,
+  example: ({label, ...props}) => <Button {...props}>{label} Jake was HERE</Button>,
+})

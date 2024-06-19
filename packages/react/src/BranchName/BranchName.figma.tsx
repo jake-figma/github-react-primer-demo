@@ -12,16 +12,13 @@ import figma from '@figma/code-connect'
  * code example you'd like to see in Figma
  */
 
-figma.connect(
-  BranchName,
-  'https://www.figma.com/file/GCvY3Qv8czRgZgvl1dG6lp/Primer-Web?type=design&node-id=3655-7208&mode=design&t=HqwKHI6akvFT5reK-4',
-  {
-    props: {
-      as: figma.enum('type', {
-        text: 'span',
-        link: undefined,
-      }),
-    },
-    example: ({as}) => <BranchName as={as} />,
+figma.connect(BranchName, 'https://www.figma.com/design/ieK3h0I8pVv7tRUoR3z4Hh?node-id=3655-7208', {
+  props: {
+    label: figma.textContent('branch_name'),
+    as: figma.enum('type', {
+      text: 'span',
+      link: undefined,
+    }),
   },
-)
+  example: ({as, label}) => <BranchName as={as}>{label}</BranchName>,
+})
