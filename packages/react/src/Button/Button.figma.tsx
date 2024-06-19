@@ -35,5 +35,5 @@ const componentProps = {
 
 figma.connect(Button, 'https://www.figma.com/design/ieK3h0I8pVv7tRUoR3z4Hh?node-id=30258-5582', {
   props: componentProps,
-  example: ({label, ...props}) => <Button {...props}>{label} Jake was HERE</Button>,
+  example: ({label, ...props}) => <Button {...props}>{label}</Button>,
 })

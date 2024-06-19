@@ -12,7 +12,8 @@ import figma from '@figma/code-connect'
 
 figma.connect(Link, 'https://www.figma.com/design/ieK3h0I8pVv7tRUoR3z4Hh?node-id=20953-78768', {
   props: {
-    label: figma.string('label'),
+    label: figma.string('link text'),
+    inline: figma.boolean('inline'),
     trailingVisual: figma.boolean('trailingVisual?', {
       true: figma.instance('trailingVisual'),
       false: undefined,
@@ -21,12 +22,10 @@ figma.connect(Link, 'https://www.figma.com/design/ieK3h0I8pVv7tRUoR3z4Hh?node-id
       true: figma.instance('leadingVisual'),
       false: undefined,
     }),
-    muted: figma.enum('variant', {
-      'text muted': true,
-    }),
+    muted: figma.boolean('muted'),
   },
-  example: ({label, muted, leadingVisual, trailingVisual}) => (
-    <Link inline muted={muted} href="#">
+  example: ({label, inline, muted, leadingVisual, trailingVisual}) => (
+    <Link inline={inline} muted={muted} href="#">
       {leadingVisual}
       {label}
       {trailingVisual}
