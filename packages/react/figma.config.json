@@ -4,8 +4,12 @@
     "exclude": ["test/**", "docs/**", "build/**", "src/Octicon/**"],
     "parser": "react",
     "importPaths": {
-      "./src/*": "@primer/react"
+      "./src/*": "@primer/react",
+      "./src/Figma/*": "ui"
     },
-    "paths": {}
+    "paths": {},
+    "documentUrlSubstitutions": {
+      "<CODE_CONNECT_ROOT>": "https://www.figma.com/design/ieK3h0I8pVv7tRUoR3z4Hh/?node-id="
+    }
   }
 }
